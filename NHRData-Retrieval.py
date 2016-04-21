@@ -16,17 +16,17 @@ GetMultipleResults = D2Result['D2R_GetMultipleResult']
 #	iEntryID: id from NHRList.txt corresponding to the value to retrieve
 #	pfData: sample array to store the retrieved value
 #	iMaxValues: number of items to retrieve (NI in NHRList.txt); should always be 1 when GetSingleResult is called
-#	pszReportKey: to use when NI > 0 and when value to retrieve refers to a particular BDL component
-#	pszRowKey: to use when KT > 0 and when a report has multiple row
+#	pszReportKey: to use when NI > 0 and when value to retrieve refers to a particular BDL component; '\0' if not valid
+#	pszRowKey: to use when KT > 0 and when a report has multiple row; '\0' if not valid
 #
 
-pszDOE2Dir = 'C:\\DOE-2\\'
-pszFileName = 'C:\\DOE-2DllTest\\Test'
-iEntryID = 2001001
-pfData = (ctypes.c_float*1)()
-iMaxValues = 1
-pszReportKey = "\0"
-pszRowKey = "\0"
+pszDOE2Dir = 
+pszFileName = 
+iEntryID = 
+iMaxValues = 
+pfData = (ctypes.c_float*iMaxValues)()
+pszReportKey = 
+pszRowKey = 
 
 #
 # 	Get Multiple Result
@@ -37,16 +37,18 @@ pszRowKey = "\0"
 #	iFileType: 0 for Loads results, 1 for HVAC, 2 for Utility Rate; in general first digit of NHRlist ID minus 1
 #	pfData: sample array to store the retrieved value
 #	iMaxValues: number of items to retrieve (NI in NHRList.txt); should always be 1 when GetSingleResult is called
-#	iNumMRTs: 
-#	pMRTs: 
+#	iNumMRTs: number of values in one set of results
+#	pMRTs: number of set of results to retrieve (max=12)
 #
 
-pszDOE2Dir = 'C:\\DOE-2\\'
-pszFileName = 'C:\\DOE-2DllTest\\Test'
-iFileType = 1
-pfData = (ctypes.c_float*13)()
-iMaxValues = 13
-iNumMRTs = 1
+pszDOE2Dir = 
+pszFileName = 
+iFileType =
+iMaxValues = 
+pfData = (ctypes.c_float*iMaxValues)()
+iNumMRTs = 
+
+# Define a 'Structue' that contains information about the data to retrieve
 
 class MRTarray(ctypes.Structure):
     _fields_ = [("iEntryID", ctypes.c_int),
@@ -58,13 +60,15 @@ class MRTarray(ctypes.Structure):
 MRT = MRTarray()
 MRTS = (MRTarray * iNumMRTs)()
 
-MRTS[0].iEntryID = 2309007
-MRTS[0].pszReportKey = "EM1"
-MRTS[0].pszRowKey = "\0"
+# Below, i is an index from 0 to iNumMRTs
+
+MRTS[i].iEntryID =
+MRTS[i].pszReportKey =
+MRTS[i].pszRowKey = 
 
 pMRTs = MRTS
 
-#Retrieve and print the data
+# Retrieve and print the data
 GetSingleResult(pszDOE2Dir,pszFileName,iEntryID,pfData,iMaxValues,pszReportKey,pszRowKey)
 print "GetSingleResult:"
 print pfData[0]
