@@ -1,0 +1,262 @@
+; Key to building component name storage
+;
+;   KeyID    BDL Command
+;   ---------------------------
+;   2001     COMPONENT-COST  
+;   2005     UTILITY-RATE    
+;   2006     BLOCK-CHARGE    
+;   2007     RATCHET         
+;   2010     SYSTEM          
+;   2019     ZONE            
+;   2020     EXTERIOR-WALL   
+;   2040     UNDERGROUND-WALL
+;   2046     INTERIOR-WALL   
+;   2050     WINDOW          
+;   2055     DOOR            
+;   2061     PUMP            
+;   2062     CIRCULATION-LOOP
+;   2063     CHILLER         
+;   2064     BOILER          
+;   2065     DW-HEATER       
+;   2066     HEAT-REJECTION  
+;   2068     ELEC-GENERATOR  
+;   2069     THERMAL-STORAGE 
+;   2070     SPACE           
+;   2085     ELEC-METER      
+;   2086     FUEL-METER      
+;   2087     STEAM-METER     
+;   2088     CHW-METER       
+;   2091     MATERIALS-COST  
+;   2092     GROUND-LOOP-HX  
+
+
+KEYOBJ,  2001,  "Component Cost",  0
+
+
+KEYOBJ,  2005,  "Utility Rate",  2
+      "SCE GS-2 Elec Rate",  3
+      "SoCalGas GN-10 Gas Rate",  4
+
+
+KEYOBJ,  2006,  "Block Charge",  5
+      "SCE GS-2 Facility Block",  -1
+      "SCE GS-2 Time-Related Block",  -1
+      "SCE GS-2 Energy Charge Block",  -1
+      "SoCalGas GN-10 Summer Block",  -1
+      "SoCalGas GN-10 Winter Block",  -1
+
+
+KEYOBJ,  2007,  "Ratchet",  1
+      "SCE GS-2 Ratchet 50",  -1
+
+
+KEYOBJ,  2010,  "System",  10
+      "Sys1 (PSZ) (G.S1)",  19
+      "Sys1 (PSZ) (G.E2)",  19
+      "Sys1 (PSZ) (G.N3)",  19
+      "Sys1 (PSZ) (G.W4)",  19
+      "Sys1 (PSZ) (G.C5)",  19
+      "Sys1 (PSZ) (T.S11)",  19
+      "Sys1 (PSZ) (T.E12)",  19
+      "Sys1 (PSZ) (T.N13)",  19
+      "Sys1 (PSZ) (T.W14)",  19
+      "Sys1 (PSZ) (T.C15)",  19
+
+
+KEYOBJ,  2019,  "Zone",  20
+      "South Perim Zn (G.S1)",  1
+      "South Perim Pl Zn (G.S6)",  2
+      "East Perim Zn (G.E2)",  1
+      "East Perim Pl Zn (G.E7)",  2
+      "North Perim Zn (G.N3)",  1
+      "North Perim Pl Zn (G.N8)",  2
+      "West Perim Zn (G.W4)",  1
+      "West Perim Pl Zn (G.W9)",  2
+      "Core Zn (G.C5)",  1
+      "Core Pl Zn (G.C10)",  2
+      "South Perim Zn (T.S11)",  1
+      "South Perim Pl Zn (T.S16)",  2
+      "East Perim Zn (T.E12)",  1
+      "East Perim Pl Zn (T.E17)",  2
+      "North Perim Zn (T.N13)",  1
+      "North Perim Pl Zn (T.N18)",  2
+      "West Perim Zn (T.W14)",  1
+      "West Perim Pl Zn (T.W19)",  2
+      "Core Zn (T.C15)",  1
+      "Core Pl Zn (T.C20)",  2
+
+
+KEYOBJ,  2020,  "Exterior Wall",  21
+      "South Wall (G.S1.E1)",  -1
+      "East Wall (G.E2.E2)",  -1
+      "North Wall (G.N3.E3)",  -1
+      "West Wall (G.W4.E4)",  -1
+      "South Wall (G.S6.E5)",  -1
+      "East Wall (G.E7.E6)",  -1
+      "North Wall (G.N8.E7)",  -1
+      "West Wall (G.W9.E8)",  -1
+      "South Wall (T.S11.E9)",  -1
+      "East Wall (T.E12.E10)",  -1
+      "North Wall (T.N13.E11)",  -1
+      "West Wall (T.W14.E12)",  -1
+      "South Wall (T.S16.E13)",  -1
+      "Roof (T.S16.E14)",  -1
+      "East Wall (T.E17.E15)",  -1
+      "Roof (T.E17.E16)",  -1
+      "North Wall (T.N18.E17)",  -1
+      "Roof (T.N18.E18)",  -1
+      "West Wall (T.W19.E19)",  -1
+      "Roof (T.W19.E20)",  -1
+      "Roof (T.C20.E21)",  -1
+
+
+KEYOBJ,  2040,  "Underground Wall",  5
+      "Flr (G.S1.U1)",  -1
+      "Flr (G.E2.U2)",  -1
+      "Flr (G.N3.U3)",  -1
+      "Flr (G.W4.U4)",  -1
+      "Flr (G.C5.U5)",  -1
+
+
+KEYOBJ,  2046,  "Interior Wall",  47
+      "NE Wall (G.S1.I1)",  -1
+      "North Wall (G.S1.I2)",  -1
+      "NW Wall (G.S1.I3)",  -1
+      "Ceiling (G.S1.I4)",  -1
+      "NW Wall (G.E2.I5)",  -1
+      "West Wall (G.E2.I6)",  -1
+      "Ceiling (G.E2.I7)",  -1
+      "SW Wall (G.N3.I8)",  -1
+      "South Wall (G.N3.I9)",  -1
+      "Ceiling (G.N3.I10)",  -1
+      "East Wall (G.W4.I11)",  -1
+      "Ceiling (G.W4.I12)",  -1
+      "Ceiling (G.C5.I13)",  -1
+      "NE Wall (G.S6.I14)",  -1
+      "North Wall (G.S6.I15)",  -1
+      "NW Wall (G.S6.I16)",  -1
+      "NW Wall (G.E7.I17)",  -1
+      "West Wall (G.E7.I18)",  -1
+      "SW Wall (G.N8.I19)",  -1
+      "South Wall (G.N8.I20)",  -1
+      "East Wall (G.W9.I21)",  -1
+      "Flr (T.S11.I22)",  -1
+      "NE Wall (T.S11.I23)",  -1
+      "North Wall (T.S11.I24)",  -1
+      "NW Wall (T.S11.I25)",  -1
+      "Ceiling (T.S11.I26)",  -1
+      "Flr (T.E12.I27)",  -1
+      "NW Wall (T.E12.I28)",  -1
+      "West Wall (T.E12.I29)",  -1
+      "Ceiling (T.E12.I30)",  -1
+      "Flr (T.N13.I31)",  -1
+      "SW Wall (T.N13.I32)",  -1
+      "South Wall (T.N13.I33)",  -1
+      "Ceiling (T.N13.I34)",  -1
+      "Flr (T.W14.I35)",  -1
+      "East Wall (T.W14.I36)",  -1
+      "Ceiling (T.W14.I37)",  -1
+      "Flr (T.C15.I38)",  -1
+      "Ceiling (T.C15.I39)",  -1
+      "NE Wall (T.S16.I40)",  -1
+      "North Wall (T.S16.I41)",  -1
+      "NW Wall (T.S16.I42)",  -1
+      "NW Wall (T.E17.I43)",  -1
+      "West Wall (T.E17.I44)",  -1
+      "SW Wall (T.N18.I45)",  -1
+      "South Wall (T.N18.I46)",  -1
+      "East Wall (T.W19.I47)",  -1
+
+
+KEYOBJ,  2050,  "Window",  16
+      "South Win (G.S1.E1.W1)",  -1
+      "South Win (G.S1.E1.W2)",  -1
+      "South Door (G.S1.E1.D1)",  -1
+      "East Win (G.E2.E2.W1)",  -1
+      "East Win (G.E2.E2.W2)",  -1
+      "East Door (G.E2.E2.D1)",  -1
+      "North Win (G.N3.E3.W1)",  -1
+      "North Win (G.N3.E3.W2)",  -1
+      "North Door (G.N3.E3.D1)",  -1
+      "West Win (G.W4.E4.W1)",  -1
+      "West Win (G.W4.E4.W2)",  -1
+      "West Door (G.W4.E4.D1)",  -1
+      "South Win (T.S11.E9.W1)",  -1
+      "East Win (T.E12.E10.W1)",  -1
+      "North Win (T.N13.E11.W1)",  -1
+      "West Win (T.W14.E12.W1)",  -1
+
+
+KEYOBJ,  2055,  "Door",  0
+
+
+KEYOBJ,  2061,  "Pump",  0
+
+
+KEYOBJ,  2062,  "Circulation Loop",  1
+      "DHW Plant 1 Loop (1)",  8
+
+
+KEYOBJ,  2063,  "Chiller",  0
+
+
+KEYOBJ,  2064,  "Boiler",  0
+
+
+KEYOBJ,  2065,  "DW Heater",  1
+      "DHW Plant 1 Wtr Htr (1)",  1
+
+
+KEYOBJ,  2066,  "Heat Rejection",  0
+
+
+KEYOBJ,  2068,  "Elec Generator",  0
+
+
+KEYOBJ,  2069,  "Thermal Storage",  0
+
+
+KEYOBJ,  2070,  "Space",  20
+      "South Perim Spc (G.S1)",  -1
+      "East Perim Spc (G.E2)",  -1
+      "North Perim Spc (G.N3)",  -1
+      "West Perim Spc (G.W4)",  -1
+      "Core Spc (G.C5)",  -1
+      "South Perim Plnm (G.S6)",  -1
+      "East Perim Plnm (G.E7)",  -1
+      "North Perim Plnm (G.N8)",  -1
+      "West Perim Plnm (G.W9)",  -1
+      "Core Plnm (G.C10)",  -1
+      "South Perim Spc (T.S11)",  -1
+      "East Perim Spc (T.E12)",  -1
+      "North Perim Spc (T.N13)",  -1
+      "West Perim Spc (T.W14)",  -1
+      "Core Spc (T.C15)",  -1
+      "South Perim Plnm (T.S16)",  -1
+      "East Perim Plnm (T.E17)",  -1
+      "North Perim Plnm (T.N18)",  -1
+      "West Perim Plnm (T.W19)",  -1
+      "Core Plnm (T.C20)",  -1
+
+
+KEYOBJ,  2085,  "Elec Meter",  1
+      "EM1",  1
+
+
+KEYOBJ,  2086,  "Fuel Meter",  1
+      "FM1",  1
+
+
+KEYOBJ,  2087,  "Steam Meter",  0
+
+
+KEYOBJ,  2088,  "CHW Meter",  0
+
+
+KEYOBJ,  2091,  "Materials Cost",  0
+
+
+KEYOBJ,  2092,  "Ground Loop HX",  0
+
+
+END
