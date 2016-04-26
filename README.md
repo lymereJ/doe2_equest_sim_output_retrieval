@@ -11,7 +11,7 @@ Using this method it is also possible to create custom output reports.
 There are two versions of D2Result.dll, a 32-bits and 64-bits compatible one.
 
 ## Scripts
-- NHRData-Retrieval.py is a 'skeleton' that can be use to create custom Python functions to retrieve non-hourly data using both the D2R_GetSingleResult and D2R_GetMultipleResult functions included in the D2Result.dll file
+- `NHRData-Retrieval.py` is a 'skeleton' that can be use to create custom Python functions to retrieve non-hourly data using both the D2R_GetSingleResult and D2R_GetMultipleResult functions included in the D2Result.dll file
 - NHRData-RetrieveSingleResult.py is a fully functionning Python module that contains a function that allows the user to retrieve single non-hourly data from the simulation output files. The function uses other functions contained in D2Result.dll (D2R_LoadNHKData (load the non-hourly data in memory), D2R_GetNumComponents (retrieve the number of items corresponding to a particular DOE-2 command, ex: how many SYSTEM?) and D2R_GetComponentName (retrieve the name of a particular item corresponding to a particular command, ex: name of the first SYSTEM in the mode)). The function can be called via basic command line as long as the right arguments are passed to it. This makes the function versatile and able to be used in conjonction with other scripts or other programs. For example, the NHRData-RetrieveSingleResult.py script can be used with the RetrieveNHRData.xlsm workbook to create batch runs to harvest a large number of information from a large number of model at once.
 
 ## Example
