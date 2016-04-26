@@ -1,4 +1,4 @@
-# Retrieve non-hourly data from DOE-2 simulation output files using Python
+# Retrieve non-hourly data from DOE-2/eQUEST simulation output files using Python
 
 ## Description
 This repository contains a set of Python scripts that levrage the functions (writen in C++) in D2Result.dll to retrieve non-hourly data from [DOE-2/eQUEST](http://www.doe2.com/) simulation output files.
