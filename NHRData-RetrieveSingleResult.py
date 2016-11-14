@@ -89,7 +89,9 @@ def RetrieveNHRData(ProjectPath,DOE2Path,NHRID,Command,ChildCommand,OutputFileNa
 			# Retrieve and store the data
 			GetSingleResult(pszDOE2Dir,pszFileName,iEntryID,pfData,iMaxValues,pszReportKey,pszRowKey)
 			OutputLine = str(OutputLine) + str(pfData[0]) + ","
-	Output.write(OutputLine+'\n')
+	Output.write(OutputLine)
+	Output.write('\n')
+	Output.close
 	
 if __name__ == '__main__':
 	RetrieveNHRData(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])	
