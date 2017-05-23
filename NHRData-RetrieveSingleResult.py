@@ -46,7 +46,10 @@ def RetrieveNHRData(ProjectPath,DOE2Path,NHRID,Command,ChildCommand,OutputFileNa
 	'STEAM-METER': 2087,
 	'CHW-METER': 2088,
 	'MATERIALS-COST': 2091}
-	CommandCount = GetNumComponents(Commands[Command],-1)
+	if Command <> "-":
+		CommandCount = GetNumComponents(Commands[Command],-1)
+	else:
+		CommandCount = 1
 	if ChildCommand <> "-":
 		ChildCommandCount = GetNumComponents(Commands[ChildCommand],-1)
 		
@@ -72,7 +75,8 @@ def RetrieveNHRData(ProjectPath,DOE2Path,NHRID,Command,ChildCommand,OutputFileNa
 		pfData = (ctypes.c_float*iMaxValues)()
 		# Get the name of the Command
 		CompName = ctypes.c_char_p('')
-		GetCompName(Commands[Command],-1,i,CompName,33)
+		if Command <> "-":
+			GetCompName(Commands[Command],-1,i,CompName,33)
 		pszReportKey = CompName.value
 
 		if ChildCommand <> "-":
